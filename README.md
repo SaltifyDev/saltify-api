@@ -1,3 +1,3 @@
-# saltify-protobuf
+# saltify-api
 
-ProtoBuf runtime solution for Kotlin JVM.
+API for Saltify plugins and adapters.
