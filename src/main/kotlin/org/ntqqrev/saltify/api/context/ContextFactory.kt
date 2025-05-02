@@ -15,6 +15,6 @@ interface ContextFactory<T> {
     suspend fun createContext(
         init: T,
         env: Environment,
-        channel: MutableSharedFlow<Event>
+        flow: MutableSharedFlow<Event>
     ): Context
 }
