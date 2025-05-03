@@ -9,4 +9,5 @@ interface ForwardMessageBuilder :
     FaceFeature,
     ImageFeature,
     VideoFeature,
+    ReplyFeature,
     ForwardFeature

@@ -11,4 +11,5 @@ interface GroupMessageBuilder :
     ImageFeature,
     RecordFeature,
     VideoFeature,
+    ReplyFeature,
     ForwardFeature

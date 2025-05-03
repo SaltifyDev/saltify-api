@@ -10,4 +10,5 @@ interface PrivateMessageBuilder :
     ImageFeature,
     RecordFeature,
     VideoFeature,
+    ReplyFeature,
     ForwardFeature
