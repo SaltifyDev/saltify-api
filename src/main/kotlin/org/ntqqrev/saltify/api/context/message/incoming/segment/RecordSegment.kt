@@ -9,5 +9,5 @@ open class RecordSegment(
     /**
      * The duration of the audio in seconds.
      */
-    val duration: String
+    val duration: Int
 ) : ResourceLikeSegment(message, resourceId)
