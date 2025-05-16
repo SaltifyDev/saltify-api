@@ -12,5 +12,10 @@ open class FriendPokeEvent(
     /**
      * Whether the poke is sent by the bot itself.
      */
-    val isSelf: Boolean,
+    val isSelfSend: Boolean,
+
+    /**
+     * Whether the poke is received by the bot itself.
+     */
+    val isSelfReceive: Boolean,
 ) : AbstractFriendEvent(ctx, time, friend)
