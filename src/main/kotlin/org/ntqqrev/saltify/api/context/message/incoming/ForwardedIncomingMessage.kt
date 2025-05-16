@@ -1,6 +1,8 @@
 package org.ntqqrev.saltify.api.context.message.incoming
 
-interface ForwardedIncomingMessage : IncomingMessage {
+import org.ntqqrev.saltify.api.context.message.incoming.segment.Segment
+
+interface ForwardedIncomingMessage {
     /**
      * The sender of the original message. Can be fake.
      */
@@ -10,4 +12,9 @@ interface ForwardedIncomingMessage : IncomingMessage {
      * The sender's nickname in the original message.
      */
     val senderName: String
+
+    /**
+     * The content of the message.
+     */
+    val segments: List<Segment>
 }

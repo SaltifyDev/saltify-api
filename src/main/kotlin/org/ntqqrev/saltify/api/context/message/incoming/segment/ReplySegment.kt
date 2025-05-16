@@ -6,7 +6,7 @@ open class ReplySegment(
     message: IncomingMessage,
 
     /**
-     * The ID of the message being replied to.
+     * The sequence of the message being replied to.
      */
-    val repliedMessageId: String,
+    val repliedSequence: Long,
 ) : Segment(message)

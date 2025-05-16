@@ -4,5 +4,5 @@ interface ReplyFeature {
     /**
      * Reply to a message.
      */
-    fun reply(messageId: String)
+    fun reply(sequence: Long)
 }

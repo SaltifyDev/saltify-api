@@ -6,9 +6,9 @@ import org.ntqqrev.saltify.api.context.message.incoming.segment.Segment
 
 interface IncomingMessage : Entity {
     /**
-     * The ID of the message.
+     * The sequence number of the message.
      */
-    val messageId: String
+    val sequence: Long
 
     /**
      * The time when the message was sent.

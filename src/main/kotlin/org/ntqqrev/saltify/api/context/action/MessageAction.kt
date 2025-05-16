@@ -1,5 +1,6 @@
 package org.ntqqrev.saltify.api.context.action
 
+import org.ntqqrev.saltify.api.context.message.MessageScene
 import org.ntqqrev.saltify.api.context.message.incoming.ForwardedIncomingMessage
 import org.ntqqrev.saltify.api.context.message.incoming.GroupIncomingMessage
 import org.ntqqrev.saltify.api.context.message.incoming.IncomingMessage
@@ -20,19 +21,20 @@ interface MessageAction {
     suspend fun sendGroupMessage(groupUin: Long, builder: GroupMessageBuilder.() -> Unit): MessageSendResult
 
     /**
-     * Get a message by its ID.
+     * Get some history messages from a user.
+     * @param userUin The UIN of the user.
+     * @param beginSequence The sequence number of the first message to retrieve (inclusive).
+     * @param endSequence The sequence number of the last message to retrieve (exclusive).
      */
-    suspend fun getMessageById(messageId: String): IncomingMessage
+    suspend fun queryPrivateMessage(userUin: Long, beginSequence: Long, endSequence: Long): List<PrivateIncomingMessage>
 
     /**
-     * Get some history messages from a user, starting from a specific message ID.
+     * Get some history messages from a group.
+     * @param groupUin The UIN of the group.
+     * @param beginSequence The sequence number of the first message to retrieve (inclusive).
+     * @param endSequence The sequence number of the last message to retrieve (exclusive).
      */
-    suspend fun getHistoryPrivateMessage(userUin: Long, startId: String, count: Int): List<PrivateIncomingMessage>
-
-    /**
-     * Get some history messages from a group, starting from a specific message ID.
-     */
-    suspend fun getHistoryGroupMessage(groupUin: Long, startId: String, count: Int): List<GroupIncomingMessage>
+    suspend fun queryGroupMessage(groupUin: Long, beginSequence: Long, endSequence: Long): List<GroupIncomingMessage>
 
     /**
      * Get a URL for a resource.
@@ -49,19 +51,4 @@ interface MessageAction {
      * @return true if the message was recalled successfully, false otherwise.
      */
     suspend fun recallMessage(incomingMessage: IncomingMessage): Boolean
-
-    /**
-     * Send a poke to a user.
-     */
-    suspend fun sendPrivatePoke(userUin: Long)
-
-    /**
-     * Send a poke to a group.
-     */
-    suspend fun sendGroupPoke(groupUin: Long, memberUin: Long)
-
-    /**
-     * Add / delete a reaction to a **group** message.
-     */
-    suspend fun setMessageFaceReaction(messageId: String, reactionId: String, isAdd: Boolean)
 }

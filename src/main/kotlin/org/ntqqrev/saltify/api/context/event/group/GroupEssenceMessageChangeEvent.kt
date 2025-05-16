@@ -11,9 +11,9 @@ open class GroupEssenceMessageChangeEvent(
     group: Group,
 
     /**
-     * The ID of the message that changed.
+     * The sequence number of the message that was set or removed from essence.
      */
-    val messageId: String,
+    val sequence: Long,
 
     /**
      * The group member who set or removed the essence.

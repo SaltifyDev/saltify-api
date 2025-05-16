@@ -11,6 +11,13 @@ interface ContextAction {
     suspend fun start()
 
     /**
+     * Get the login information.
+     *
+     * @return A pair of (uin, nickname).
+     */
+    suspend fun getLoginInfo(): Pair<Long, String>
+
+    /**
      * Get all friends.
      */
     suspend fun getAllFriends(cacheFirst: Boolean = true): Iterable<Friend>

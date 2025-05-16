@@ -11,9 +11,9 @@ open class GroupMessageReactionEvent(
     group: Group,
 
     /**
-     * The ID of the message that was reacted to.
+     * The sequence number of the message where the reaction was sent.
      */
-    val messageId: String,
+    val sequence: Long,
 
     /**
      * The group member who sent the reaction.
