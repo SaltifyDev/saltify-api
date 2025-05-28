@@ -27,6 +27,11 @@ interface FileEntry : FileSystemEntry {
     val fileSize: Long
 
     /**
+     * The time when the file was uploaded.
+     */
+    val uploadedTime: Instant
+
+    /**
      * The time when the file will expire.
      */
     val expireTime: Instant
@@ -41,11 +46,6 @@ interface FileEntry : FileSystemEntry {
      * Not using `GroupMember` object because the uploader may be no longer a member of the group.
      */
     val uploaderUin: Long
-
-    /**
-     * The time when the file was uploaded.
-     */
-    val uploadedTime: Instant
 
     /**
      * The number of times the file has been downloaded.

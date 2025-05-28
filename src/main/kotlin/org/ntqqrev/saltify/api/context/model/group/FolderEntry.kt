@@ -29,7 +29,7 @@ interface FolderEntry : FileSystemEntry {
     /**
      * The time when the folder was last modified.
      */
-    val modifiedTime: Instant
+    val lastModifiedTime: Instant
 
     /**
      * The uin of the creator.
@@ -40,5 +40,5 @@ interface FolderEntry : FileSystemEntry {
     /**
      * The total number of files in the folder.
      */
-    val totalFileCount: Long
+    val fileCount: Long
 }

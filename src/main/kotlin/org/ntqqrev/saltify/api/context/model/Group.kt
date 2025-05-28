@@ -15,31 +15,6 @@ interface Group : Entity {
     val name: String
 
     /**
-     * The remark of the group defined by the bot.
-     */
-    val remark: String?
-
-    /**
-     * The description of the group, if present.
-     */
-    val description: String?
-
-    /**
-     * The question to answer to join the group, if present.
-     */
-    val question: String?
-
-    /**
-     * The announcement of the group, if present.
-     */
-    val announcement: String?
-
-    /**
-     * The creation time of the group.
-     */
-    val createdAt: Instant
-
-    /**
      * The number of members in the group.
      */
     val memberCount: Int

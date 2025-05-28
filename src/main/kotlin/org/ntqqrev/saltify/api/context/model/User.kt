@@ -12,22 +12,17 @@ interface User : Entity {
     val uin: Long
 
     /**
-     * The nickname of the user.
-     */
-    val name: String
-
-    /**
-     * The remark name of the user defined by the bot.
-     */
-    val remark: String?
-
-    /**
-     * The signature of the user.
-     */
-    val signature: String?
-
-    /**
      * Another identifier of the user, if defined.
      */
     val qid: String?
+
+    /**
+     * The nickname of the user.
+     */
+    val nickname: String
+
+    /**
+     * The gender of the user.
+     */
+    val gender: Gender
 }

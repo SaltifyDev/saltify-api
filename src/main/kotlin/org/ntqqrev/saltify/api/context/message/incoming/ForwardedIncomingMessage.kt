@@ -1,8 +1,9 @@
 package org.ntqqrev.saltify.api.context.message.incoming
 
+import org.ntqqrev.saltify.api.context.Entity
 import org.ntqqrev.saltify.api.context.message.incoming.segment.Segment
 
-interface ForwardedIncomingMessage {
+interface ForwardedIncomingMessage : Entity {
     /**
      * The sender of the original message. Can be fake.
      */
