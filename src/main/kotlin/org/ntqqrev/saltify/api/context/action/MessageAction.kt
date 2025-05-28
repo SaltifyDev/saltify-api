@@ -21,20 +21,20 @@ interface MessageAction {
     suspend fun sendGroupMessage(groupUin: Long, builder: GroupMessageBuilder.() -> Unit): MessageSendResult
 
     /**
-     * Get some history messages from a user.
-     * @param userUin The UIN of the user.
-     * @param beginSequence The sequence number of the first message to retrieve (inclusive).
-     * @param endSequence The sequence number of the last message to retrieve (exclusive).
+     * Get a message by its sequence number.
      */
-    suspend fun queryPrivateMessage(userUin: Long, beginSequence: Long, endSequence: Long): List<PrivateIncomingMessage>
+    suspend fun getMessage(messageScene: MessageScene, peerId: Long, sequence: Long): IncomingMessage?
 
     /**
-     * Get some history messages from a group.
-     * @param groupUin The UIN of the group.
-     * @param beginSequence The sequence number of the first message to retrieve (inclusive).
-     * @param endSequence The sequence number of the last message to retrieve (exclusive).
+     * Get history messages with a starting sequence number and a limit.
      */
-    suspend fun queryGroupMessage(groupUin: Long, beginSequence: Long, endSequence: Long): List<GroupIncomingMessage>
+    suspend fun getHistoryMessages(
+        messageScene: MessageScene,
+        peerId: Long,
+        startSequence: Long? = null,
+        isBackward: Boolean = true,
+        limit: Int = 20
+    ): List<IncomingMessage>
 
     /**
      * Get a URL for a resource.
