@@ -2,12 +2,12 @@ package org.ntqqrev.saltify.api.context.action
 
 interface RequestAction {
     /**
-     * Accept the request with the given flag.
+     * Accept the request with the given id.
      */
-    suspend fun acceptRequest(requestFlag: String)
+    suspend fun acceptRequest(requestId: String)
 
     /**
-     * Reject the request with the given flag, using the given reason or no reason.
+     * Reject the request with the given id, using the given reason or no reason.
      */
-    suspend fun rejectRequest(requestFlag: String, reason: String? = null)
+    suspend fun rejectRequest(requestId: String, reason: String? = null)
 }

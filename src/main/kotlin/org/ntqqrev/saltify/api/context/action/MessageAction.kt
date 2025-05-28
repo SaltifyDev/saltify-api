@@ -47,8 +47,14 @@ interface MessageAction {
     suspend fun getForwardedMessages(forwardId: String): List<ForwardedIncomingMessage>
 
     /**
-     * Recall a message.
+     * Recall a private message.
      * @return true if the message was recalled successfully, false otherwise.
      */
-    suspend fun recallMessage(incomingMessage: IncomingMessage): Boolean
+    suspend fun recallPrivateMessage(userUin: Long, sequence: Long, clientSequence: Long): Boolean
+
+    /**
+     * Recall a group message.
+     * @return true if the message was recalled successfully, false otherwise.
+     */
+    suspend fun recallGroupMessage(groupUin: Long, sequence: Long): Boolean
 }

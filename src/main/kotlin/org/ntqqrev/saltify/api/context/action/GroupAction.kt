@@ -72,10 +72,10 @@ interface GroupAction {
     /**
      * Send a poke to a group.
      */
-    suspend fun sendGroupPoke(groupUin: Long, memberUin: Long)
+    suspend fun sendGroupNudge(groupUin: Long, memberUin: Long)
 
     /**
      * Add / delete a reaction to a group message.
      */
-    suspend fun setMessageFaceReaction(groupUin: Long, sequence: Long, reactionId: String, isAdd: Boolean)
+    suspend fun sendGroupMessageReaction(groupUin: Long, sequence: Long, reactionId: String, isAdd: Boolean)
 }

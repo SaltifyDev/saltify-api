@@ -12,6 +12,12 @@ interface Context : ContextAction, MessageAction, UserAction, GroupAction, Reque
     val uin: Long
 
     /**
+     * The nickname of the bot.
+     * This is usually the name displayed in the bot's profile.
+     */
+    val nickname: String
+
+    /**
      * The state of the context.
      */
     val state: State
