@@ -151,18 +151,18 @@ open class GroupMuteEvent(
     val duration: Int?,
 ) : AbstractGroupEvent(ctx, time, group)
 
-open class GroupPokeEvent(
+open class GroupNudgeEvent(
     ctx: Context,
     time: Instant,
     group: Group,
 
     /**
-     * The group member who sent the poke.
+     * The group member who sent the nudge.
      */
     val sender: GroupMember,
 
     /**
-     * The group member who received the poke.
+     * The group member who received the nudge.
      */
     val receiver: GroupMember,
 ) : AbstractGroupEvent(ctx, time, group)

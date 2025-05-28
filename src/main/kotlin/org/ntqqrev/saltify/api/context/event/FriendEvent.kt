@@ -14,18 +14,18 @@ abstract class AbstractFriendEvent(
     val friend: Friend
 ) : Event(ctx, time)
 
-open class FriendPokeEvent(
+open class FriendNudgeEvent(
     ctx: Context,
     time: Instant,
     friend: Friend,
 
     /**
-     * Whether the poke is sent by the bot itself.
+     * Whether the nudge is sent by the bot itself.
      */
     val isSelfSend: Boolean,
 
     /**
-     * Whether the poke is received by the bot itself.
+     * Whether the nudge is received by the bot itself.
      */
     val isSelfReceive: Boolean,
 ) : AbstractFriendEvent(ctx, time, friend)

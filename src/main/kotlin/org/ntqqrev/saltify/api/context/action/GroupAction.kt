@@ -70,7 +70,7 @@ interface GroupAction {
     suspend fun quitGroup(groupUin: Long)
 
     /**
-     * Send a poke to a group.
+     * Send a nudge to a group.
      */
     suspend fun sendGroupNudge(groupUin: Long, memberUin: Long)
 
